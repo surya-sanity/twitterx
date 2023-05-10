@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainWrapper from './Components/MainWrapper';
 import ScrollToTop from './Components/ScrollToTop';
-import Bookmarks from './Screens/Bookmarks';
+import Bookmarks from './Screens/Bookmarks/Bookmarks';
 import Explore from './Screens/Explore';
 import Following from './Screens/Home/Following';
 import ForYou from './Screens/Home/ForYou';
@@ -14,6 +14,7 @@ import Notifications from './Screens/Notifications';
 import PageNotFound from './Screens/PageNotFound';
 import Profile from './Screens/Profile';
 import { store } from './Store/store';
+import One from './Screens/Bookmarks/One';
 
 export default function App() {
   return (
@@ -40,7 +41,9 @@ const AppContent = () => {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/lists" element={<Lists />} />
-          <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="bookmarks" element={<Bookmarks />} >
+            <Route path="one" element={<One />} />
+          </Route >
           <Route path="/profile" element={<Profile />} />
         </Route >
       </Routes>

@@ -1,4 +1,4 @@
-import Bookmarks from "../../Screens/Bookmarks";
+import Bookmarks from "../../Screens/Bookmarks/Bookmarks";
 import Explore from "../../Screens/Explore";
 import Home from "../../Screens/Home/Home";
 import Lists from "../../Screens/Lists";

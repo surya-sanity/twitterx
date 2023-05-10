@@ -1,8 +1,10 @@
-import React from 'react'
+import PageHeader from '../Components/PageHeader/PageHeader'
 
 const Messages = () => {
   return (
-    <div>Messages</div>
+    <PageHeader
+      name="Messages">
+    </PageHeader>
   )
 }
 

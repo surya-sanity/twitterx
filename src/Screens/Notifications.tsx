@@ -1,8 +1,10 @@
-import React from 'react'
+import PageHeader from '../Components/PageHeader/PageHeader'
 
 const Notifications = () => {
   return (
-    <div>Notifications</div>
+    <PageHeader
+      name="Notifications">
+    </PageHeader>
   )
 }
 

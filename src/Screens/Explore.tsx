@@ -1,8 +1,10 @@
-import React from 'react'
+import PageHeader from '../Components/PageHeader/PageHeader'
 
 const Explore = () => {
   return (
-    <div>Explore</div>
+    <PageHeader
+      name="Explore">
+    </PageHeader>
   )
 }
 

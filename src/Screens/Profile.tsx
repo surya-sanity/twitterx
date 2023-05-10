@@ -1,8 +1,10 @@
-import React from 'react'
+import PageHeader from '../Components/PageHeader/PageHeader'
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <PageHeader
+      name="Profile">
+    </PageHeader>
   )
 }
 
