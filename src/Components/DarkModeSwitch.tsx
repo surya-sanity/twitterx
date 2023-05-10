@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { ReactComponent as Dark } from '../../Assets/Icons/moon.svg';
-import { ReactComponent as Light } from '../../Assets/Icons/sun.svg';
-import useDarkMode from '../../Hooks/useDarkMode';
-import { getDarkMode } from '../../Store/Reducers/UtilReducer';
+import { ReactComponent as Dark } from '../Assets/Icons/moon.svg';
+import { ReactComponent as Light } from '../Assets/Icons/sun.svg';
+import useDarkMode from '../Hooks/useDarkMode';
+import { getDarkMode } from '../Store/Reducers/UtilReducer';
 
 interface DarkModeSwitchPropType {
   className?: string;

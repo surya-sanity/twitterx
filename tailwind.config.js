@@ -11,10 +11,14 @@ module.exports = {
         dark: "black",
         darkOverlay: "#202327",
         light: "white",
-        lightOverlay: "#F0F2F2"
-      }
+        lightOverlay: "#F0F2F2",
+        darkBorder: "rgb(75 85 99)",
+        lightBorder: "#F7F7F8",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }
 

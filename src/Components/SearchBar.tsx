@@ -31,7 +31,7 @@ const SearchBar = (props: SearchBarPropType) => {
         onChange={handleChange}
         type="text"
         placeholder={placeHolder}
-        className="w-full py-3 pl-12 pr-4 border rounded-md outline-none  bg-light dark:bg-dark"
+        className="w-full py-3 pl-12 pr-4  rounded-full outline-none  bg-lightOverlay dark:bg-darkOverlay"
       />
     </div>
   );
