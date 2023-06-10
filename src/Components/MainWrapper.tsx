@@ -1,11 +1,12 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import ActionsSidebar from './ActionsSidebar/ActionsSidebar'
-import SearchSidebar from './SearchSidebar/SearchSidebar'
 import ScrollToTop from './ScrollToTop'
+import SearchSidebar from './SearchSidebar/SearchSidebar'
 import UnSignedFooter from './UnSignedFooter'
 
 
-const MainWrapper = () => {
+const MainWrapper = ({ modalOpen }: { modalOpen: boolean }) => {
+
 
   return (
     <div className=' flex flex-col'>
@@ -16,8 +17,9 @@ const MainWrapper = () => {
           <ActionsSidebar />
         </section>
 
-        <section className='w-full min-h-[100vh] lg:col-span-2 border-lightBorder dark:border-darkBorder border-[1px] border-y-0'>
+        <section className={`w-full min-h-[100vh] lg:col-span-2 border-lightBorder dark:border-darkBorder border-[1px] border-y-0`}>
           <ScrollToTop />
+          {/* {!modalOpen && <Outlet />} */}
           <Outlet />
         </section>
 

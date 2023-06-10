@@ -1,9 +1,11 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import MainWrapper from './Components/MainWrapper';
+import Modal from './Components/Modal';
 import ScrollToTop from './Components/ScrollToTop';
 import Bookmarks from './Screens/Bookmarks/Bookmarks';
+import One from './Screens/Bookmarks/One';
 import Explore from './Screens/Explore';
 import Following from './Screens/Home/Following';
 import ForYou from './Screens/Home/ForYou';
@@ -14,24 +16,29 @@ import Notifications from './Screens/Notifications';
 import PageNotFound from './Screens/PageNotFound';
 import Profile from './Screens/Profile';
 import { store } from './Store/store';
-import One from './Screens/Bookmarks/One';
 
 export default function App() {
   return (
     <Provider store={store}>
-      <AppContent />
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </Provider>
   )
 }
 
 
 const AppContent = () => {
+  const location = useLocation();
+  const background = location.state && location.state.background;
+  console.log("Appcontent background", background)
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
-      <Routes>
+      <Routes location={background || location}>
         <Route path="*" element={<PageNotFound />} />
-        <Route element={<MainWrapper />} >
+        <Route element={<MainWrapper modalOpen={!!background} />} >
           <Route path="/" element={<Navigate to="/home/foryou" />} />
           <Route path="home" element={<Home />}>
             <Route path="foryou" element={<ForYou />} />
@@ -47,6 +54,12 @@ const AppContent = () => {
           <Route path="/profile" element={<Profile />} />
         </Route >
       </Routes>
-    </BrowserRouter>
+
+      {background && (
+        <Routes>
+          <Route path="modal" element={<Modal />} />
+        </Routes>
+      )}
+    </>
   )
 }
